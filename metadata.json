@@ -1,0 +1,6 @@
+{
+  "name": "Qazi Office & Nikah Registrar System",
+  "description": "Comprehensive digital office and legal records management system for Maulana Qazi Hafiz Muhammad Shahid Attari Madani - Nikah Registrar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

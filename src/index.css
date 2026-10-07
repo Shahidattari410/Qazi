@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: local('Jameel Noori Nastaleeq'),
+       url('https://fonts.cdnfonts.com/s/72579/JameelNooriNastaleeqRegular.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/alif-type/jameel-noori-nastaleeq/fonts/woff2/JameelNooriNastaleeqRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --app-font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Amiri', serif;
+    --app-font-scale: 100%;
+    --letterhead-scale: 92%;
+    --receipt-font-scale: 90%;
+    --app-line-height: 1.35;
+    --emerald-deep: #087443;
+    --royal-blue: #243B80;
+    --gold-metallic: #D4AF37;
+    --ivory: #FFFDF5;
+    --turquoise: #159F9A;
+    --burgundy: #8E2940;
+    --dark-charcoal: #18221D;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--app-font-family);
+  }
+}
+
+.font-urdu,
+.font-nastaliq {
+  font-family: var(--app-font-family);
+  line-height: var(--app-line-height, 1.35);
+}
+
+.font-header-urdu {
+  font-family: var(--app-font-family);
+  line-height: 1.2;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+  line-height: 1.35;
+}
+
+.font-heading {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.2;
+}
+
+/* Islamic Geometric Border Motifs */
+.islamic-border {
+  border: 1.5px solid #D4AF37;
+  position: relative;
+}
+
+.islamic-frame {
+  box-shadow: 0 0 0 1px #D4AF37, 0 0 0 3px #087443, 0 0 0 4px #D4AF37;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa820a 100%);
+}
+
+.emerald-gradient {
+  background: linear-gradient(135deg, #087443 0%, #0c9155 100%);
+}
+
+.royal-gradient {
+  background: linear-gradient(135deg, #243B80 0%, #152554 100%);
+}
+
+/* Compact Official Letterhead Styles */
+.letterhead-pad-compact {
+  border-bottom: 2px solid #087443;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+/* Print styling for professional A4 output & 100% reliable print isolation */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Robust isolation mode: when active-print-target is present */
+  body.app-printing-active * {
+    visibility: hidden;
+  }
+
+  body.app-printing-active .active-print-target,
+  body.app-printing-active .active-print-target * {
+    visibility: visible !important;
+  }
+
+  body.app-printing-active .active-print-target {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    z-index: 999999 !important;
+  }
+
+  /* Make sure modal overlays do not block or color the print */
+  body.app-printing-active .fixed {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  body.app-printing-active .overflow-y-auto,
+  body.app-printing-active .overflow-hidden,
+  body.app-printing-active .overflow-x-auto {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  .print-page {
+    box-shadow: none !important;
+    border: 1.5px solid #087443 !important;
+    margin: 0 auto !important;
+    padding: 6mm !important;
+    width: 100% !important;
+    min-height: auto !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    background: #fff !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  tr, th, td {
+    page-break-inside: avoid !important;
+  }
+}
+
+
